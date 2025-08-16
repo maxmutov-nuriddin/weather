@@ -7,7 +7,7 @@ import { FixedSizeList as List } from "react-window";
 
 const Layouts = () => {
   const [burger, setBurger] = useState(false);
-  const [query, setQuery] = useState(""); 
+  const [query, setQuery] = useState("");
   const { setCity } = useCity();
 
   function burgerBtn() {
@@ -40,24 +40,36 @@ const Layouts = () => {
       </header>
 
       <div
-        className={`fixed top-0 left-0 h-full w-64 bg-blue-700 text-white transform ${
+        className={`fixed top-0 left-0 h-full w-64 bg-stone-900/90 rounded-lg text-white transform ${
           burger ? "translate-x-0" : "-translate-x-full"
         } transition-transform duration-300 ease-in-out z-50`}
       >
         <nav className="flex flex-col h-full">
-          <div className="p-3 border-b border-blue-500 bg-blue-800">
-            <input
-              type="text"
-              placeholder="Поиск города..."
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              className="w-full px-2 py-1 rounded text-white"
-            />
+          <div className="p-3 border-b border-blue-500">
+            <div className="relative w-full">
+              <input
+                type="text"
+                placeholder="Поиск города..."
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                className="w-full px-2 py-1 rounded text-white bg-gray-700/50 pr-8"
+              />
+
+              {query && (
+                <button
+                  type="button"
+                  onClick={() => setQuery("")}
+                  className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-300 hover:text-white"
+                >
+                  ✖
+                </button>
+              )}
+            </div>
           </div>
 
           <div className="flex-1">
             <List
-              height={window.innerHeight - 60} 
+              height={window.innerHeight - 60}
               itemCount={filteredCities.length}
               itemSize={40}
               width={256}
