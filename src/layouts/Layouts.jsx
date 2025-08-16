@@ -51,7 +51,7 @@ const Layouts = () => {
               placeholder="Поиск города..."
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              className="w-full px-2 py-1 rounded text-black"
+              className="w-full px-2 py-1 rounded text-white"
             />
           </div>
 
