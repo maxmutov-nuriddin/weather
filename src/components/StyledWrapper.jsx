@@ -292,7 +292,7 @@ const StyledWrapper = styled.div`
 
   .weather-info .left-side:not(.icon) {
     width: 20%;
-    font-size: 30pt;
+    font-size: 24pt;
     font-weight: 600;
     align-self: baseline;
   }
