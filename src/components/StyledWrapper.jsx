@@ -21,7 +21,7 @@ const Card = ({ data }) => {
             </div>
             <div className="right-side">
               <div className="location">
-                <span >
+                <span>
                   {data.city}, {data.country}
                 </span>
               </div>
@@ -33,8 +33,12 @@ const Card = ({ data }) => {
           <div className="forecast">
             {data.forecast.map((f, i) => (
               <div key={i}>
-                <p className="font-bold text-[16px] md:text-xl sm:text-2xl">{f.date}</p>
-                <p className="font-bold text-[16px] md:text-xl sm:text-2xl">{f.temp}°C</p>
+                <p className="font-bold text-[16px] md:text-xl sm:text-2xl">
+                  {f.date}
+                </p>
+                <p className="font-bold text-[16px] md:text-xl sm:text-2xl">
+                  {f.temp}°C
+                </p>
               </div>
             ))}
           </div>
@@ -295,6 +299,12 @@ const StyledWrapper = styled.div`
     font-size: 24pt;
     font-weight: 600;
     align-self: baseline;
+  }
+
+  @media only screen and (max-width: 430px) {
+    .weather-info .left-side:not(.icon) {
+      font-size: 19pt;
+    }
   }
 
   .icon {
