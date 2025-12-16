@@ -1,14 +1,11 @@
 import { useEffect, useState } from "react";
-import Card from "../components/StyledWrapper";
+import WeatherDashboard from "../components/WeatherDashboard";
 import { useCity } from "../utils/CityContext";
 
 const GlobalPages = () => {
-  const { city } = useCity(); // ⚡ city global contextdan keladi
+  const { city } = useCity();
   const [weatherData, setWeatherData] = useState(null);
 
-
-  console.log(weatherData);
-  
   const apiKey = "a1eda70acff73cb6b226bae7b1c84c5a";
 
   useEffect(() => {
@@ -34,6 +31,10 @@ const GlobalPages = () => {
           country: current.sys.country,
           temp: Math.round(current.main.temp),
           description: current.weather[0].description,
+          feels_like: Math.round(current.main.feels_like),
+          humidity: current.main.humidity,
+          pressure: current.main.pressure,
+          wind_speed: current.wind.speed,
           date: new Date().toLocaleDateString("ru-RU", {
             weekday: "long",
             day: "numeric",
@@ -54,9 +55,9 @@ const GlobalPages = () => {
     };
 
     fetchData();
-  }, [city]); // ⚡ city o‘zgarsa qayta yuklanadi
+  }, [city]);
 
-  return <Card data={weatherData} />;
+  return <WeatherDashboard data={weatherData} />;
 };
 
 export default GlobalPages;
