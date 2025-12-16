@@ -50,7 +50,7 @@ const Layouts = () => {
 
       <div
         className={`fixed top-0 left-0 h-full w-80 bg-slate-900/40 backdrop-blur-xl border-r border-white/10 text-white transform ${burger ? "translate-x-0" : "-translate-x-full"
-          } transition-transform duration-300 ease-in-out z-50 shadow-2xl`}
+          } transition-transform duration-300 ease-in-out z-40 shadow-2xl`}
       >
         <nav className="flex flex-col h-full pt-6">
           <div className="px-4 pb-6 border-b border-white/10">
@@ -68,7 +68,7 @@ const Layouts = () => {
                 <button
                   type="button"
                   onClick={() => setQuery("")}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white transition-colors"
+                  className="absolute right-3 top-1/2 z-50 -translate-y-1/2 text-gray-400 hover:text-white transition-colors"
                 >
                   ✖
                 </button>
