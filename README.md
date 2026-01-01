@@ -18,4 +18,4 @@ React app fetching and displaying real-time weather data.
 ## ▶️ Run Locally
 ```bash
 npm install
-npm start
+npm run dev
