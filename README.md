@@ -6,24 +6,16 @@
 ```md
 # Weather App
 
-A simple weather application using an external API.
-
-## ☁️ About
-Fetches real-time weather data and displays it in a clean interface.
+React app fetching and displaying real-time weather data.
 
 ## 🛠 Tech Stack
+- React
 - JavaScript
 - HTML
 - CSS
 - Weather API
 
-## 🔍 Features
-- City-based weather search
-- Live temperature data
-- API integration
-
-## ▶️ Usage
-Open `index.html` and enter a city name.
-
-## 👤 Author
-Nuriddin
+## ▶️ Run Locally
+```bash
+npm install
+npm start
